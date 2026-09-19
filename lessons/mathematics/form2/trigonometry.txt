@@ -1,0 +1,22 @@
+MATHEMATICS — FORM 2
+TOPIC: TRIGONOMETRY
+
+Trigonometry studies relationships between angles
+and sides of triangles.
+
+For a right-angled triangle:
+
+sin θ = opposite / hypotenuse
+
+cos θ = adjacent / hypotenuse
+
+tan θ = opposite / adjacent
+
+A useful memory aid is SOH-CAH-TOA.
+
+PRACTICE
+
+1. State the meaning of SOH.
+2. State the meaning of CAH.
+3. State the meaning of TOA.
+4. Identify the hypotenuse in a right triangle.

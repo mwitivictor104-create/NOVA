@@ -1,0 +1,38 @@
+MATHEMATICS — FORM 1
+TOPIC: FRACTIONS
+
+A fraction represents part of a whole.
+
+A fraction has:
+• Numerator — the top number.
+• Denominator — the bottom number.
+
+Example:
+
+3/5
+
+3 is the numerator.
+5 is the denominator.
+
+Equivalent fractions:
+
+1/2 = 2/4 = 3/6
+
+Adding fractions with the same denominator:
+
+2/7 + 3/7 = 5/7
+
+For different denominators, find a common denominator.
+
+Example:
+
+1/2 + 1/4
+= 2/4 + 1/4
+= 3/4
+
+PRACTICE
+
+1. Simplify 6/12.
+2. Calculate 2/5 + 1/5.
+3. Calculate 3/4 - 1/4.
+4. Convert 1 1/2 to an improper fraction.

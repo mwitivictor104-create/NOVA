@@ -1,0 +1,38 @@
+MATHEMATICS — FORM 1
+TOPIC: GEOMETRY
+
+Geometry deals with shapes, lines, angles and measurements.
+
+Common shapes:
+• Triangle
+• Square
+• Rectangle
+• Circle
+
+Important terms:
+• Point
+• Line
+• Angle
+• Parallel lines
+• Perpendicular lines
+
+A right angle is 90 degrees.
+
+A straight angle is 180 degrees.
+
+A complete turn is 360 degrees.
+
+Rectangle perimeter:
+
+P = 2(length + width)
+
+Rectangle area:
+
+A = length × width
+
+PRACTICE
+
+1. Find the perimeter of a rectangle 8 cm by 5 cm.
+2. Find its area.
+3. What is a right angle?
+4. How many degrees are in a full turn?

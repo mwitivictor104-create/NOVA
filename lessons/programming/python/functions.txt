@@ -1,0 +1,67 @@
+TITLE
+Python Functions
+
+OBJECTIVES
+- Understand functions.
+- Define a function.
+- Call a function.
+- Use parameters and return values.
+
+LESSON
+A function is a reusable block of code that performs a task.
+
+A function is created using the def keyword.
+
+Example:
+
+def greet():
+    print("Hello NOVA")
+
+The function can then be called:
+
+greet()
+
+Functions can receive parameters.
+
+Example:
+
+def greet(name):
+    print("Hello", name)
+
+greet("Victor")
+
+A function can return a value.
+
+Example:
+
+def add(a, b):
+    return a + b
+
+result = add(10, 20)
+
+EXAMPLE
+def multiply(a, b):
+    return a * b
+
+answer = multiply(5, 4)
+print(answer)
+
+KEY POINTS
+- Functions make code reusable.
+- def is used to define a function.
+- Parameters allow functions to receive data.
+- return sends a value back from a function.
+
+PRACTICE
+1. What is a function?
+2. Which keyword defines a Python function?
+3. Write a function called greet.
+4. What does return do?
+5. Write a function that adds two numbers.
+
+ANSWERS
+1. A function is a reusable block of code that performs a task.
+2. def
+3. def greet():
+4. return sends a value back from a function.
+5. def add(a, b): return a + b

@@ -1,0 +1,32 @@
+MATHEMATICS — FORM 4
+TOPIC: CALCULUS
+
+Calculus studies change and accumulation.
+
+Two major branches are:
+
+1. Differentiation
+2. Integration
+
+Differentiation is commonly used to find rates of change.
+
+Integration can be used to find accumulated quantities
+and areas.
+
+Example:
+
+If:
+
+y = x²
+
+then:
+
+dy/dx = 2x
+
+PRACTICE
+
+Differentiate:
+
+1. y = x³
+2. y = 5x²
+3. y = 7x

@@ -1,0 +1,25 @@
+MATHEMATICS — FORM 2
+TOPIC: VECTORS
+
+A vector has both magnitude and direction.
+
+A scalar has magnitude only.
+
+Examples of vectors:
+• Displacement
+• Velocity
+• Force
+
+Examples of scalars:
+• Distance
+• Speed
+• Mass
+• Time
+
+Vectors can be represented using arrows.
+
+PRACTICE
+
+1. Define a vector.
+2. Define a scalar.
+3. Give two examples of each.

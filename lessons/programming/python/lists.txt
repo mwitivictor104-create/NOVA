@@ -1,0 +1,63 @@
+TITLE
+Python Lists
+
+OBJECTIVES
+- Understand Python lists.
+- Create lists.
+- Access list items.
+- Add and remove items.
+
+LESSON
+A list stores multiple values in one variable.
+
+Example:
+
+fruits = ["apple", "banana", "orange"]
+
+Python lists use indexes beginning at 0.
+
+Example:
+
+print(fruits[0])
+
+This prints the first item.
+
+Items can be added using append().
+
+Example:
+
+fruits.append("mango")
+
+Items can be removed using remove().
+
+Example:
+
+fruits.remove("banana")
+
+EXAMPLE
+numbers = [10, 20, 30]
+
+numbers.append(40)
+
+print(numbers)
+
+KEY POINTS
+- Lists store multiple values.
+- List indexes start at 0.
+- append() adds an item.
+- remove() removes an item.
+- Lists can contain different types of values.
+
+PRACTICE
+1. What is a list?
+2. What number is the first list index?
+3. Which method adds an item?
+4. Which method removes an item?
+5. Create a list containing three programming languages.
+
+ANSWERS
+1. A list stores multiple values in one variable.
+2. 0
+3. append()
+4. remove()
+5. languages = ["Python", "JavaScript", "Java"]

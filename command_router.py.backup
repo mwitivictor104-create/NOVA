@@ -1,0 +1,11 @@
+def route(command):
+    command = command.strip()
+
+    if not command:
+        return ""
+
+    try:
+        from brain import respond
+        return respond(command)
+    except Exception:
+        return None

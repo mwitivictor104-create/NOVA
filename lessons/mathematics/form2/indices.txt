@@ -1,0 +1,29 @@
+MATHEMATICS — FORM 2
+TOPIC: INDICES
+
+An index represents repeated multiplication.
+
+2³ = 2 × 2 × 2 = 8
+
+Important laws:
+
+aᵐ × aⁿ = aᵐ⁺ⁿ
+
+aᵐ ÷ aⁿ = aᵐ⁻ⁿ
+
+(aᵐ)ⁿ = aᵐⁿ
+
+a⁰ = 1, where a is not zero.
+
+Example:
+
+2³ × 2²
+= 2⁵
+= 32
+
+PRACTICE
+
+1. Simplify 3² × 3³.
+2. Simplify 5⁶ ÷ 5².
+3. Evaluate 10⁰.
+4. Evaluate 2⁴.

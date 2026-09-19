@@ -1,0 +1,22 @@
+MATHEMATICS — FORM 4
+TOPIC: INTEGRATION
+
+Integration is the reverse process of differentiation.
+
+Power rule:
+
+∫xⁿ dx = xⁿ⁺¹/(n+1) + C
+
+Example:
+
+∫x² dx = x³/3 + C
+
+C represents the constant of integration.
+
+PRACTICE
+
+Integrate:
+
+1. x²
+2. 3x²
+3. 4x³

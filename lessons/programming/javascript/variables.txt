@@ -1,0 +1,55 @@
+TITLE
+JavaScript Variables
+
+OBJECTIVES
+- Understand JavaScript variables.
+- Use let and const.
+- Store different types of values.
+
+LESSON
+Variables store data in a JavaScript program.
+
+Modern JavaScript commonly uses let and const.
+
+Example:
+
+let name = "NOVA";
+const version = 1;
+
+let can be changed:
+
+let score = 50;
+score = 80;
+
+A const variable cannot normally be reassigned.
+
+JavaScript supports values such as strings, numbers and booleans.
+
+EXAMPLE
+let name = "NOVA";
+let age = 18;
+let active = true;
+
+console.log(name);
+console.log(age);
+console.log(active);
+
+KEY POINTS
+- Variables store data.
+- let creates a variable that can be reassigned.
+- const creates a variable that should not be reassigned.
+- JavaScript supports strings, numbers and booleans.
+
+PRACTICE
+1. What is a variable?
+2. Which keyword creates a reassignable variable?
+3. Which keyword is used for a value that should not be reassigned?
+4. Write a variable containing the name NOVA.
+5. Write a boolean variable called active.
+
+ANSWERS
+1. A variable stores data.
+2. let
+3. const
+4. let name = "NOVA";
+5. let active = true;

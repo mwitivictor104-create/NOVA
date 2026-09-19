@@ -1,0 +1,55 @@
+TITLE
+Python Variables
+
+OBJECTIVES
+- Understand what a variable is.
+- Create variables in Python.
+- Store different types of data.
+- Display variable values.
+
+LESSON
+A variable is a name used to store a value.
+
+Examples:
+
+name = "NOVA"
+age = 18
+price = 100.5
+active = True
+
+Python automatically determines the type of value stored.
+
+Common data types include:
+- str - text
+- int - whole numbers
+- float - decimal numbers
+- bool - True or False
+
+EXAMPLE
+name = "Victor"
+age = 18
+
+print(name)
+print(age)
+
+KEY POINTS
+- Variables store data.
+- Python does not require a type declaration when creating a variable.
+- Strings contain text.
+- Integers contain whole numbers.
+- Floats contain decimal numbers.
+- Booleans contain True or False.
+
+PRACTICE
+1. What is a variable?
+2. Write a Python variable containing the name NOVA.
+3. Which data type stores whole numbers?
+4. Which data type stores text?
+5. Write a variable called price containing 250.
+
+ANSWERS
+1. A variable is a name used to store a value.
+2. name = "NOVA"
+3. int
+4. str
+5. price = 250

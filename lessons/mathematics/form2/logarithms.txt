@@ -1,0 +1,29 @@
+MATHEMATICS — FORM 2
+TOPIC: LOGARITHMS
+
+A logarithm is another way of expressing an index.
+
+If:
+
+2³ = 8
+
+then:
+
+log₂ 8 = 3
+
+The base is 2.
+The answer is 3.
+
+Important relationship:
+
+aˣ = y
+
+means:
+
+logₐ y = x
+
+PRACTICE
+
+1. Write 3² = 9 as a logarithm.
+2. Find log₂ 16.
+3. Find log₁₀ 100.

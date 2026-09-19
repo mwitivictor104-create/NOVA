@@ -1,0 +1,67 @@
+TITLE
+CSS Selectors
+
+OBJECTIVES
+- Understand CSS.
+- Understand selectors.
+- Select HTML elements.
+- Apply styles to webpages.
+
+LESSON
+CSS stands for Cascading Style Sheets.
+
+CSS is used to control the appearance of HTML webpages.
+
+An element selector targets an HTML element.
+
+Example:
+
+p {
+    font-size: 20px;
+}
+
+A class selector starts with a dot.
+
+Example:
+
+.title {
+    font-size: 30px;
+}
+
+An ID selector starts with #.
+
+Example:
+
+#main {
+    width: 100%;
+}
+
+EXAMPLE
+h1 {
+    font-size: 32px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+KEY POINTS
+- CSS controls webpage appearance.
+- Element selectors target HTML elements.
+- Class selectors begin with a dot.
+- ID selectors begin with #.
+- CSS rules contain properties and values.
+
+PRACTICE
+1. What does CSS stand for?
+2. What is CSS used for?
+3. How does a class selector begin?
+4. How does an ID selector begin?
+5. Write a CSS rule that changes paragraph font size.
+
+ANSWERS
+1. Cascading Style Sheets.
+2. CSS controls the appearance of webpages.
+3. A class selector begins with a dot.
+4. An ID selector begins with #.
+5. p { font-size: 20px; }

@@ -1,0 +1,54 @@
+TITLE
+Python Loops
+
+OBJECTIVES
+- Understand loops.
+- Use for loops.
+- Use while loops.
+- Repeat instructions efficiently.
+
+LESSON
+A loop repeats a block of code.
+
+A for loop can iterate through a sequence.
+
+Example:
+
+for i in range(5):
+    print(i)
+
+A while loop continues while a condition is true.
+
+Example:
+
+count = 0
+
+while count < 5:
+    print(count)
+    count += 1
+
+The range() function is commonly used with for loops.
+
+EXAMPLE
+for number in range(1, 6):
+    print(number)
+
+KEY POINTS
+- Loops repeat code.
+- for loops are useful for iterating through sequences.
+- while loops continue while a condition is true.
+- range() generates a sequence of numbers.
+
+PRACTICE
+1. What is a loop?
+2. Which loop is commonly used with range()?
+3. What does a while loop do?
+4. Write a loop that prints numbers 1 to 5.
+5. Why are loops useful?
+
+ANSWERS
+1. A loop repeats a block of code.
+2. for
+3. A while loop repeats code while a condition is true.
+4. for i in range(1, 6): print(i)
+5. Loops allow repeated tasks to be performed efficiently.

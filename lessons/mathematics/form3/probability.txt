@@ -1,0 +1,23 @@
+MATHEMATICS — FORM 3
+TOPIC: PROBABILITY
+
+Probability measures how likely an event is to occur.
+
+Probability:
+
+P(event) =
+number of favourable outcomes /
+total number of possible outcomes
+
+Probability lies between 0 and 1.
+
+Example:
+
+A fair coin has two possible outcomes.
+
+P(head) = 1/2.
+
+PRACTICE
+
+1. What is the probability of rolling a 6 on a fair die?
+2. What is the probability of getting heads on a fair coin?

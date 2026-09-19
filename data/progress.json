@@ -1,0 +1,86 @@
+{
+  "programming|python|variables": {
+    "subject": "programming",
+    "form": "python",
+    "topic": "variables",
+    "started": true,
+    "practice_started": false,
+    "attempts": 0,
+    "last_score": 0,
+    "best_score": 0,
+    "completed": true,
+    "history": []
+  },
+  "mathematics|form1|numbers": {
+    "subject": "mathematics",
+    "form": "form1",
+    "topic": "numbers",
+    "started": true,
+    "practice_started": false,
+    "attempts": 0,
+    "last_score": 0,
+    "best_score": 0,
+    "completed": false,
+    "history": []
+  },
+  "biology|form1|cell": {
+    "subject": "biology",
+    "form": "form1",
+    "topic": "cell",
+    "started": true,
+    "practice_started": false,
+    "attempts": 0,
+    "last_score": 0,
+    "best_score": 0,
+    "completed": false,
+    "history": []
+  },
+  "physics|form3|motion": {
+    "subject": "physics",
+    "form": "form3",
+    "topic": "motion",
+    "started": true,
+    "practice_started": false,
+    "attempts": 0,
+    "last_score": 0,
+    "best_score": 0,
+    "completed": false,
+    "history": []
+  },
+  "english|form4|kcse_revision": {
+    "subject": "english",
+    "form": "form4",
+    "topic": "kcse revision",
+    "started": true,
+    "practice_started": false,
+    "attempts": 0,
+    "last_score": 0,
+    "best_score": 0,
+    "completed": false,
+    "history": []
+  },
+  "english|form4|set_book": {
+    "subject": "english",
+    "form": "form4",
+    "topic": "set book",
+    "started": true,
+    "practice_started": false,
+    "attempts": 0,
+    "last_score": 0,
+    "best_score": 0,
+    "completed": false,
+    "history": []
+  },
+  "kiswahili|form1|sarufi": {
+    "subject": "kiswahili",
+    "form": "form1",
+    "topic": "sarufi",
+    "started": true,
+    "practice_started": false,
+    "attempts": 0,
+    "last_score": 0,
+    "best_score": 0,
+    "completed": false,
+    "history": []
+  }
+}

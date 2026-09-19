@@ -1,0 +1,22 @@
+COMPUTER — PROGRAMMING
+
+Programming is the process of creating instructions
+that a computer can execute.
+
+A program may use:
+• Variables
+• Conditions
+• Loops
+• Functions
+• Data structures
+
+Example idea:
+
+IF temperature is greater than 30
+THEN display "Hot"
+
+PRACTICE
+
+1. Define programming.
+2. What is a variable?
+3. What is a loop?

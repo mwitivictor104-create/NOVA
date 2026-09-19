@@ -1,0 +1,57 @@
+TITLE
+Node.js and Express
+
+OBJECTIVES
+- Understand Node.js.
+- Understand Express.
+- Create a basic Express server.
+- Understand routes.
+
+LESSON
+Node.js allows JavaScript to run outside a web browser.
+
+Express is a Node.js framework commonly used for building web servers and APIs.
+
+A basic Express application can look like:
+
+const express = require("express");
+
+const app = express();
+
+app.get("/", (req, res) => {
+    res.send("Hello NOVA");
+});
+
+app.listen(3000);
+
+The route "/" handles requests to the root address.
+
+app.listen() starts the server.
+
+EXAMPLE
+app.get("/hello", (req, res) => {
+    res.send("Hello from NOVA");
+});
+
+This creates a route called /hello.
+
+KEY POINTS
+- Node.js runs JavaScript outside the browser.
+- Express is a framework for Node.js.
+- Routes determine how a server responds to requests.
+- app.get() handles GET requests.
+- app.listen() starts the server.
+
+PRACTICE
+1. What is Node.js?
+2. What is Express?
+3. What does app.get() do?
+4. What does app.listen() do?
+5. What port is used in the example?
+
+ANSWERS
+1. Node.js allows JavaScript to run outside a web browser.
+2. Express is a Node.js framework for building web servers and APIs.
+3. app.get() defines a GET route.
+4. app.listen() starts the server.
+5. Port 3000.

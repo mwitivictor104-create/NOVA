@@ -1,0 +1,68 @@
+TITLE
+JavaScript Functions
+
+OBJECTIVES
+- Understand JavaScript functions.
+- Create functions.
+- Use parameters.
+- Return values from functions.
+
+LESSON
+A function is a reusable block of JavaScript code.
+
+Example:
+
+function greet() {
+    console.log("Hello NOVA");
+}
+
+The function can be called using:
+
+greet();
+
+Functions can accept parameters.
+
+Example:
+
+function greet(name) {
+    console.log("Hello " + name);
+}
+
+greet("Victor");
+
+Functions can return values.
+
+Example:
+
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(10, 20);
+
+EXAMPLE
+function multiply(a, b) {
+    return a * b;
+}
+
+console.log(multiply(5, 4));
+
+KEY POINTS
+- Functions allow code to be reused.
+- function is commonly used to declare a function.
+- Parameters allow data to be passed into functions.
+- return sends a value back.
+
+PRACTICE
+1. What is a function?
+2. Which keyword can be used to declare a JavaScript function?
+3. What is a parameter?
+4. What does return do?
+5. Write a function that adds two numbers.
+
+ANSWERS
+1. A function is a reusable block of code that performs a task.
+2. function
+3. A parameter is a value placeholder received by a function.
+4. return sends a value back from the function.
+5. function add(a, b) { return a + b; }

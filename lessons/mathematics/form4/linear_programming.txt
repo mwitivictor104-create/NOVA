@@ -1,0 +1,22 @@
+MATHEMATICS — FORM 4
+TOPIC: LINEAR PROGRAMMING
+
+Linear programming is used to find the best solution
+under given constraints.
+
+Common terms:
+• Objective function
+• Constraints
+• Feasible region
+• Maximum
+• Minimum
+
+Problems can be represented using inequalities
+and graphs.
+
+PRACTICE
+
+Explain:
+1. Objective function.
+2. Constraint.
+3. Feasible region.

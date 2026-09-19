@@ -1,0 +1,24 @@
+COMPUTER — INTRODUCTION
+
+A computer is an electronic device that
+processes data into information.
+
+Basic operations include:
+
+Input → Processing → Output → Storage
+
+Examples of input devices:
+• Keyboard
+• Mouse
+• Scanner
+
+Output devices:
+• Monitor
+• Printer
+• Speakers
+
+PRACTICE
+
+1. Define a computer.
+2. Name three input devices.
+3. Name three output devices.

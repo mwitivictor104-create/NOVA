@@ -1,0 +1,26 @@
+COMPUTER — HARDWARE AND SOFTWARE
+
+Hardware refers to physical computer components.
+
+Examples:
+• CPU
+• Keyboard
+• Monitor
+• Storage devices
+
+Software refers to programs and instructions
+used by computers.
+
+Examples:
+• Operating systems
+• Applications
+• Utilities
+
+PRACTICE
+
+Classify these as hardware or software:
+
+1. Keyboard
+2. Android
+3. Monitor
+4. Web browser

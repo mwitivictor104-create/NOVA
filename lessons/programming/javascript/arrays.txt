@@ -1,0 +1,60 @@
+TITLE
+JavaScript Arrays
+
+OBJECTIVES
+- Understand arrays.
+- Create arrays.
+- Access array elements.
+- Add items to arrays.
+
+LESSON
+An array stores multiple values.
+
+Example:
+
+let languages = ["Python", "JavaScript", "Java"];
+
+Array indexes begin at 0.
+
+Example:
+
+console.log(languages[0]);
+
+The push() method adds an item.
+
+Example:
+
+languages.push("C++");
+
+The length property gives the number of items.
+
+Example:
+
+console.log(languages.length);
+
+EXAMPLE
+let numbers = [10, 20, 30];
+
+numbers.push(40);
+
+console.log(numbers);
+
+KEY POINTS
+- Arrays store multiple values.
+- Array indexes start at 0.
+- push() adds an item.
+- length gives the number of items.
+
+PRACTICE
+1. What is an array?
+2. What is the first array index?
+3. Which method adds an item?
+4. What does length provide?
+5. Create an array containing three numbers.
+
+ANSWERS
+1. An array stores multiple values.
+2. 0
+3. push()
+4. length provides the number of items.
+5. let numbers = [10, 20, 30];

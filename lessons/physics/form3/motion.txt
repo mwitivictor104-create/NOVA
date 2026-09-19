@@ -1,0 +1,20 @@
+PHYSICS — MOTION
+
+Motion describes a change in position with time.
+
+Speed:
+
+speed = distance / time
+
+Velocity includes direction.
+
+Acceleration:
+
+acceleration =
+change in velocity / time
+
+PRACTICE
+
+1. A car travels 100 m in 20 s. Find its speed.
+2. Define velocity.
+3. Define acceleration.

@@ -1,0 +1,57 @@
+TITLE
+HTML Basics
+
+OBJECTIVES
+- Understand HTML.
+- Understand HTML elements.
+- Create a basic webpage.
+- Use headings, paragraphs and links.
+
+LESSON
+HTML stands for HyperText Markup Language.
+
+HTML is used to structure content on webpages.
+
+A basic HTML document contains elements such as:
+
+<html>
+<head>
+<title>NOVA</title>
+</head>
+<body>
+<h1>Hello NOVA</h1>
+<p>Welcome to my webpage.</p>
+</body>
+</html>
+
+<h1> creates a main heading.
+
+<p> creates a paragraph.
+
+<a> creates a link.
+
+EXAMPLE
+<h1>NOVA AI</h1>
+<p>This is my first webpage.</p>
+
+KEY POINTS
+- HTML structures webpages.
+- HTML uses elements and tags.
+- h1 creates a heading.
+- p creates a paragraph.
+- a creates a link.
+- body contains visible webpage content.
+
+PRACTICE
+1. What does HTML stand for?
+2. What is HTML used for?
+3. Which tag creates a main heading?
+4. Which tag creates a paragraph?
+5. Which tag is commonly used for links?
+
+ANSWERS
+1. HyperText Markup Language.
+2. HTML is used to structure content on webpages.
+3. h1
+4. p
+5. a

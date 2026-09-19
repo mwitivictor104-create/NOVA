@@ -1,0 +1,29 @@
+MATHEMATICS — FORM 4
+TOPIC: DIFFERENTIATION
+
+Differentiation measures how a quantity changes.
+
+Power rule:
+
+d/dx(xⁿ) = nxⁿ⁻¹
+
+Example:
+
+y = x⁴
+
+dy/dx = 4x³
+
+Another example:
+
+y = 3x²
+
+dy/dx = 6x
+
+PRACTICE
+
+Differentiate:
+
+1. x⁵
+2. 4x³
+3. 8x²
+4. 6x

@@ -1,0 +1,34 @@
+MATHEMATICS — FORM 1
+TOPIC: ALGEBRA
+
+Algebra uses letters and symbols to represent unknown values.
+
+Example:
+
+x + 5 = 12
+
+Subtract 5 from both sides:
+
+x = 7
+
+Terms:
+• Variable
+• Constant
+• Coefficient
+• Expression
+• Equation
+
+Example:
+
+3x + 4
+
+3 is the coefficient.
+x is the variable.
+4 is the constant.
+
+PRACTICE
+
+1. Solve x + 8 = 15.
+2. Solve x - 4 = 9.
+3. Solve 2x = 18.
+4. Simplify 3x + 2x.

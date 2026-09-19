@@ -1,0 +1,66 @@
+TITLE
+Python Conditional Statements
+
+OBJECTIVES
+- Understand if statements.
+- Use if, elif and else.
+- Make decisions in Python programs.
+
+LESSON
+Conditional statements allow a program to make decisions.
+
+The basic structure is:
+
+if condition:
+    statement
+
+Example:
+
+age = 18
+
+if age >= 18:
+    print("Adult")
+
+The else block runs when the condition is false.
+
+Example:
+
+age = 15
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Under 18")
+
+elif allows additional conditions.
+
+Example:
+
+score = 75
+
+if score >= 80:
+    print("A")
+elif score >= 60:
+    print("B")
+else:
+    print("C")
+
+KEY POINTS
+- if tests a condition.
+- elif tests another condition.
+- else handles the remaining case.
+- Indentation is important in Python.
+
+PRACTICE
+1. What is a conditional statement?
+2. Which keyword tests a condition?
+3. What does else do?
+4. What does elif allow?
+5. Write a program that prints "Pass" when score is 50 or higher.
+
+ANSWERS
+1. A conditional statement allows a program to make decisions.
+2. if
+3. else handles the case when previous conditions are false.
+4. elif allows additional conditions.
+5. if score >= 50: print("Pass")

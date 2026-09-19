@@ -1,0 +1,29 @@
+COMPUTER — PYTHON PROGRAMMING
+
+Python is a high-level programming language.
+
+Example:
+
+name = "NOVA"
+
+print(name)
+
+Variables store values.
+
+Conditional example:
+
+if age >= 18:
+    print("Adult")
+
+Loops can repeat instructions.
+
+Example:
+
+for number in range(5):
+    print(number)
+
+PRACTICE
+
+1. Create a variable called name.
+2. Print the variable.
+3. Write a simple if statement.

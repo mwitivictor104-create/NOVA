@@ -1,0 +1,32 @@
+MATHEMATICS — FORM 3
+TOPIC: QUADRATIC EQUATIONS
+
+A quadratic equation commonly has the form:
+
+ax² + bx + c = 0
+
+where a is not zero.
+
+Example:
+
+x² - 5x + 6 = 0
+
+Factorize:
+
+(x - 2)(x - 3) = 0
+
+Therefore:
+
+x = 2 or x = 3
+
+The quadratic formula is:
+
+x = (-b ± √(b² - 4ac)) / 2a
+
+PRACTICE
+
+Solve:
+
+1. x² - 7x + 12 = 0
+2. x² - 9 = 0
+3. x² + 5x + 6 = 0

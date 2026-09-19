@@ -1,0 +1,23 @@
+PHYSICS — ELECTRICITY
+
+Electric current is the flow of electric charge.
+
+Important quantities:
+
+Current — measured in amperes (A)
+Voltage — measured in volts (V)
+Resistance — measured in ohms (Ω)
+
+Ohm's law:
+
+V = IR
+
+where:
+V = voltage
+I = current
+R = resistance
+
+PRACTICE
+
+1. State Ohm's law.
+2. If V = 12 V and R = 4 Ω, find I.

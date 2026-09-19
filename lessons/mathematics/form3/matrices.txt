@@ -1,0 +1,25 @@
+MATHEMATICS — FORM 3
+TOPIC: MATRICES
+
+A matrix is a rectangular arrangement of numbers.
+
+Example:
+
+[1  2]
+[3  4]
+
+This is a 2 × 2 matrix.
+
+Matrices can be added when their dimensions are the same.
+
+PRACTICE
+
+Given:
+
+A = [1 2]
+    [3 4]
+
+B = [5 6]
+    [7 8]
+
+Find A + B.

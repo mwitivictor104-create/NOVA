@@ -1,0 +1,33 @@
+MATHEMATICS — FORM 1
+TOPIC: STATISTICS
+
+Statistics involves collecting, organizing and interpreting data.
+
+Important terms:
+
+Mean:
+Mean = sum of values ÷ number of values.
+
+Median:
+The middle value after arranging data.
+
+Mode:
+The value occurring most often.
+
+Range:
+Largest value - smallest value.
+
+Example:
+
+2, 4, 4, 6, 9
+
+Mean = 25 ÷ 5 = 5
+Mode = 4
+Median = 4
+Range = 9 - 2 = 7
+
+PRACTICE
+
+Find the mean, median, mode and range of:
+
+3, 5, 5, 7, 10

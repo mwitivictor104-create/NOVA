@@ -1,0 +1,226 @@
+#!/usr/bin/env python3
+
+from commands import execute
+from voice import (
+    speak,
+    listen,
+    voice_status
+)
+
+
+def text_mode():
+
+    print()
+    print("=== NOVA TEXT MODE ===")
+    print("Type 'exit' to return.")
+    print()
+
+    while True:
+
+        try:
+
+            user_input = input(
+                "You: "
+            ).strip()
+
+            if not user_input:
+                continue
+
+            if user_input.lower() in (
+                "exit",
+                "quit"
+            ):
+                break
+
+            response = execute(
+                user_input
+            )
+
+            print()
+            print("NOVA:")
+            print(response)
+            print()
+
+        except KeyboardInterrupt:
+            break
+
+        except Exception as error:
+
+            print(
+                "NOVA ERROR:",
+                error
+            )
+
+
+def voice_mode():
+
+    status = voice_status()
+
+    if not status["speech_to_text"]:
+
+        print()
+        print(
+            "Speech-to-text is not available."
+        )
+        print()
+
+        return
+
+    print()
+    print("=== NOVA VOICE MODE ===")
+    print("Say 'exit' to return.")
+    print()
+
+    speak(
+        "NOVA voice mode is ready."
+    )
+
+    while True:
+
+        print("Listening...")
+
+        text = listen()
+
+        if not text:
+            print(
+                "NOVA: I did not hear anything."
+            )
+            continue
+
+        print(
+            "You:",
+            text
+        )
+
+        if text.lower() in (
+            "exit",
+            "quit",
+            "stop"
+        ):
+
+            speak(
+                "Returning to the main menu."
+            )
+
+            break
+
+        try:
+
+            response = execute(
+                text
+            )
+
+            print()
+            print("NOVA:")
+            print(response)
+            print()
+
+            if status["tts"]:
+                speak(response)
+
+        except Exception as error:
+
+            print(
+                "NOVA ERROR:",
+                error
+            )
+
+
+def show_status():
+
+    status = voice_status()
+
+    print()
+    print("=== NOVA STATUS ===")
+    print()
+    print("Core: OK")
+    print("Text mode: OK")
+    print(
+        "Text-to-speech:",
+        "OK" if status["tts"]
+        else "NOT AVAILABLE"
+    )
+    print(
+        "Speech-to-text:",
+        "OK" if status["speech_to_text"]
+        else "NOT AVAILABLE"
+    )
+    print()
+
+
+def main():
+
+    print()
+    print("================================")
+    print("       NOVA AI ASSISTANT")
+    print("================================")
+    print()
+
+    while True:
+
+        print("Choose a mode:")
+        print("1. Text")
+        print("2. Voice")
+        print("3. Status")
+        print("4. Exit")
+        print()
+
+        try:
+
+            choice = input(
+                "NOVA > "
+            ).strip().lower()
+
+        except KeyboardInterrupt:
+
+            print(
+                "\nNOVA: Goodbye."
+            )
+
+            break
+
+        if choice in (
+            "1",
+            "text"
+        ):
+
+            text_mode()
+
+        elif choice in (
+            "2",
+            "voice"
+        ):
+
+            voice_mode()
+
+        elif choice in (
+            "3",
+            "status"
+        ):
+
+            show_status()
+
+        elif choice in (
+            "4",
+            "exit",
+            "quit"
+        ):
+
+            print(
+                "NOVA: Goodbye."
+            )
+
+            break
+
+        else:
+
+            print(
+                "NOVA: Please choose "
+                "1, 2, 3 or 4."
+            )
+
+        print()
+
+
+if __name__ == "__main__":
+    main()
