@@ -1,201 +1,531 @@
-import re
-from datetime import datetime
+# ==========================================================
+# NOVA BRAIN 2.0
+# brain.py
+# ==========================================================
+
+import datetime
+import random
 
 
-class NovaBrain:
+# ==========================================================
+# OPTIONAL MODULES
+# ==========================================================
 
-    def __init__(self):
-        self.name = "NOVA"
 
-    def respond(self, text):
-        text = text.strip()
+try:
+    from music import play_song
+except Exception:
+    play_song = None
 
-        if not text:
-            return "Please tell me what you need."
 
-        lower = text.lower()
+try:
+    from physics import ask_physics
+except Exception:
+    ask_physics = None
 
-        # Greetings
-        greetings = (
-            "hello",
-            "hi",
-            "hey",
-            "good morning",
-            "good afternoon",
-            "good evening",
-        )
 
-        if lower in greetings:
-            return "Hello! I am NOVA. How can I help you today?"
+try:
+    from academy.academy import ask_academy
+except Exception:
+    ask_academy = None
 
-        # Identity
-        if "who are you" in lower:
-            return (
-                "I am NOVA, your AI assistant. "
-                "I can help with learning, questions, "
-                "memory, daily content and other tasks."
-            )
 
-        # Name
-        if lower in ("what is your name", "your name"):
-            return "My name is NOVA."
+try:
+    from startup.startup_engine import ask_startup
+except Exception:
+    ask_startup = None
 
-        # Time
-        if lower in ("time", "what time is it", "current time"):
-            return datetime.now().strftime(
-                "The current time is %H:%M."
-            )
 
-        # Date
-        if lower in (
-            "date",
-            "what is today's date",
-            "what is the date",
-            "today",
-        ):
-            return datetime.now().strftime(
-                "Today is %A, %d %B %Y."
-            )
+try:
+    from developer.builder_manager import BuilderManager
+    builder = BuilderManager()
+except Exception:
+    builder = None
 
-        # Simple conversation
-        if lower in ("how are you", "how are you doing"):
-            return "I'm working well and ready to help."
 
-        if lower in ("thank you", "thanks"):
-            return "You're welcome!"
 
-        if lower in ("bye", "goodbye", "exit", "quit"):
-            return "Goodbye! NOVA will be here when you need me."
+# ==========================================================
+# CODE AI
+# ==========================================================
 
-        # Calculator
-        result = self.calculate(text)
+from developer.code_ai import CodeAI
+code_ai = CodeAI()
 
-        if result is not None:
-            return f"The answer is {result}"
 
-        # Definitions
-        if lower.startswith("what is "):
-            return self.explain(text[8:].strip())
 
-        if lower.startswith("define "):
-            return self.explain(text[7:].strip())
+# ==========================================================
+# ENTRY POINT
+# ==========================================================
 
-        if lower.startswith("explain "):
-            return self.explain(text[8:].strip())
+def ask(command):
 
-        if lower.startswith("meaning of "):
-            return self.explain(text[11:].strip())
+    return think(command)# ==========================================================
+# MAIN BRAIN
+# ==========================================================
 
-        return (
-            "I don't have an answer for that yet. "
-            "I can help with calculations, definitions, "
-            "basic conversation and learning."
-        )
+def think(command):
 
-    def calculate(self, text):
-        expression = text.lower()
+    command = command.strip()
 
-        expression = expression.replace("what is", "")
-        expression = expression.replace("calculate", "")
-        expression = expression.replace("compute", "")
-        expression = expression.strip()
+    lower_command = command.lower()
 
-        if not re.fullmatch(
-            r"[0-9+\-*/().%\s]+",
-            expression,
-        ):
-            return None
 
-        if not any(
-            operator in expression
-            for operator in "+-*/%"
-        ):
-            return None
+
+    if not command:
+
+        return "Please enter a command."
+
+
+
+    # ==================================================
+    # CODE AI BUILDER (HIGHEST PRIORITY)
+    # ==================================================
+
+    if (
+        lower_command.startswith("create website")
+        or lower_command.startswith("create fullstack")
+        or lower_command.startswith("create web app")
+        or lower_command.startswith("create chatbot")
+        or lower_command.startswith("create api")
+        or lower_command.startswith("create ai")
+    ):
+
+        if code_ai:
+
+            try:
+
+                return code_ai.process(command)
+
+
+            except Exception as e:
+
+                return f"Code AI error: {e}"
+
+
+        return "Code AI unavailable."
+
+
+
+    # ==================================================
+    # OPEN APPS
+    # ==================================================
+
+    if lower_command.startswith("open "):
+
+        app = lower_command.replace(
+            "open ",
+            "",
+            1
+        ).strip()
+
 
         try:
-            result = eval(
-                expression,
-                {"__builtins__": {}},
-                {},
-            )
 
-            if isinstance(result, float):
-                if result.is_integer():
-                    return int(result)
+            from commands import open_app
 
-                return round(result, 6)
+            return open_app(app)
 
-            return result
+
+        except Exception as e:
+
+            return f"App error: {e}"
+
+
+
+    # ==================================================
+    # MUSIC
+    # ==================================================
+
+    if lower_command.startswith("play "):
+
+        if play_song:
+
+            try:
+
+                return play_song(command)
+
+
+            except Exception as e:
+
+                return f"Music error: {e}"
+
+
+        return "Music system unavailable."    # ==================================================
+    # PHYSICS
+    # ==================================================
+
+    if lower_command.startswith("teach physics"):
+
+        topic = lower_command.replace(
+            "teach physics",
+            "",
+            1
+        ).strip()
+
+
+        if ask_physics:
+
+            try:
+
+                return ask_physics(topic)
+
+
+            except Exception as e:
+
+                return f"Physics error: {e}"
+
+
+        return "Physics system unavailable."
+
+
+
+    # ==================================================
+    # ACADEMY
+    # ==================================================
+
+    if ask_academy:
+
+        try:
+
+            result = ask_academy(command)
+
+
+            if result:
+
+                return result
+
 
         except Exception:
-            return None
 
-    def explain(self, subject):
+            pass
 
-        definitions = {
-            "computer":
-                "A computer is an electronic device that "
-                "processes data according to instructions.",
 
-            "algorithm":
-                "An algorithm is a step-by-step procedure "
-                "for solving a problem.",
 
-            "python":
-                "Python is a high-level programming language "
-                "used for software development, automation "
-                "and many other tasks.",
+    # ==================================================
+    # MEMORY
+    # ==================================================
 
-            "programming":
-                "Programming is the process of writing "
-                "instructions that computers can execute.",
+    if remember:
 
-            "mathematics":
-                "Mathematics is the study of numbers, "
-                "quantities, patterns, structures and logic.",
+        try:
 
-            "biology":
-                "Biology is the study of living organisms.",
+            result = remember(command)
 
-            "chemistry":
-                "Chemistry is the study of matter, its "
-                "properties and the changes it undergoes.",
 
-            "physics":
-                "Physics studies matter, energy, motion, "
-                "forces and their interactions.",
+            if result:
 
-            "geography":
-                "Geography studies places, people, "
-                "environments and their relationships.",
+                return result
 
-            "history":
-                "History is the study of past events "
-                "and their effects on societies.",
 
-            "entrepreneurship":
-                "Entrepreneurship involves identifying "
-                "opportunities and organizing resources "
-                "to create value.",
-        }
+        except Exception:
 
-        key = subject.lower()
+            pass
 
-        if key in definitions:
-            return definitions[key]
+
+
+    if recall:
+
+        try:
+
+            result = recall(command)
+
+
+            if result:
+
+                return result
+
+
+        except Exception:
+
+            pass
+
+
+
+    # ==================================================
+    # STARTUP ENGINE
+    # ==================================================
+
+    if ask_startup:
+
+        try:
+
+            result = ask_startup(command)
+
+
+            if result:
+
+                return result
+
+
+        except Exception:
+
+            pass    # ==================================================
+    # PYTHON LESSONS
+    # ==================================================
+
+    if lower_command in (
+        "learn python",
+        "teach me python"
+    ):
+
+        try:
+
+            from academy.python_teacher import ask_python
+
+            return ask_python("topics")
+
+
+        except Exception:
+
+            return "Python teacher unavailable."
+
+
+
+    if lower_command.startswith("python "):
+
+        try:
+
+            from academy.python_teacher import ask_python
+
+            topic = command.replace(
+                "python ",
+                "",
+                1
+            ).strip()
+
+
+            return ask_python(topic)
+
+
+        except Exception:
+
+            return "Python teacher unavailable."
+
+
+
+    # ==================================================
+    # C++ LESSONS
+    # ==================================================
+
+    if lower_command in (
+        "learn c++",
+        "teach me c++"
+    ):
+
+        try:
+
+            from academy.cpp_teacher import ask_cpp
+
+            return ask_cpp("topics")
+
+
+        except Exception:
+
+            return "C++ teacher unavailable."
+
+
+
+    # ==================================================
+    # JAPANESE
+    # ==================================================
+
+    if lower_command in (
+        "learn japanese",
+        "teach me japanese"
+    ):
+
+        try:
+
+            from academy.japanese import teach
+
+            return teach()
+
+
+        except Exception:
+
+            return "Japanese teacher unavailable."
+
+
+
+    # ==================================================
+    # PYTHON PROJECT BUILDER
+    # ==================================================
+
+    if lower_command.startswith("create python"):
+
+
+        if not builder:
+
+            return "Builder unavailable."
+
+
+        try:
+
+            name = (
+                command
+                .replace("create python", "", 1)
+                .replace("project", "", 1)
+                .strip()
+            )
+
+
+            if not name:
+
+                return "Please provide a project name."
+
+
+            return builder.python.create_program(name)
+
+
+        except Exception as e:
+
+            return f"Builder error: {e}"    # ==================================================
+    # TRADING
+    # ==================================================
+
+    if (
+        lower_command.startswith("analyze ")
+        or lower_command.startswith("trade ")
+        or lower_command.startswith("buy ")
+        or lower_command.startswith("sell ")
+    ):
+
+        if advise:
+
+            try:
+
+                symbol = (
+                    lower_command
+                    .replace("analyze ", "")
+                    .replace("trade ", "")
+                    .replace("buy ", "")
+                    .replace("sell ", "")
+                    .strip()
+                    .upper()
+                )
+
+                return str(advise(symbol))
+
+
+            except Exception as e:
+
+                return f"Trading error: {e}"
+
+
+        return "Trading module unavailable."
+
+
+
+    # ==================================================
+    # SYMBOLS
+    # ==================================================
+
+    if lower_command == "gold":
+
+        return "Gold trading symbol is XAUUSD."
+
+
+    if lower_command == "bitcoin":
+
+        return "Bitcoin trading symbol is BTCUSD."
+
+
+    if lower_command == "ethereum":
+
+        return "Ethereum trading symbol is ETHUSD."
+
+
+
+    # ==================================================
+    # GREETINGS
+    # ==================================================
+
+    if lower_command in [
+        "hello",
+        "hi",
+        "hey",
+        "good morning",
+        "good afternoon",
+        "good evening"
+    ]:
+
+        return "Hello Boss Victor."
+
+
+
+    if lower_command == "who are you":
 
         return (
-            f"I don't have a built-in definition for "
-            f"'{subject}' yet."
+            "I am NOVA, your personal AI assistant. "
+            "I can teach, build software, open apps, "
+            "and create real projects."
         )
 
 
-brain = NovaBrain()
+
+    # ==================================================
+    # TIME AND DATE
+    # ==================================================
+
+    if lower_command == "time":
+
+        return datetime.datetime.now().strftime(
+            "%I:%M %p"
+        )
 
 
-def ask_brain(text):
-    return brain.respond(text)
+    if lower_command == "date":
+
+        return datetime.datetime.now().strftime(
+            "%d %B %Y"
+        )
 
 
-def respond(text):
-    return brain.respond(text)
+
+    # ==================================================
+    # HELP
+    # ==================================================
+
+    if lower_command == "help":
+
+        return """
+
+NOVA COMMANDS
+
+BUILD:
+create website MySite
+create fullstack website StoreAI
+create web app Dashboard
+create chatbot TutorBot
+create api ShopAPI
+create ai VisionAI
+
+LEARN:
+teach me python
+teach physics motion
+teach me japanese
+teach me c++
+
+PYTHON:
+create python project Test
+
+TRADING:
+analyze xauusd
+analyze btcusd
+
+SYSTEM:
+open youtube
+play song
+time
+date
+help
+
+"""
+
+
+
+    # ==================================================
+    # DEFAULT
+    # ==================================================
+
+    return "I am still learning that command."

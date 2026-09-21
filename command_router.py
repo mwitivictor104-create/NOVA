@@ -1,207 +1,108 @@
-import re
+"""
+NOVA Command Router
+"""
 
-from brain import respond as brain_respond
-from lesson_engine import teach
-import learning
-
-
-def _parse_teach(command):
-    """
-    Parse:
-        teach mathematics form 1 numbers
-        teach biology form 1 cell
-        teach physics form 3 motion
-    """
-
-    pattern = r"^\s*teach\s+(.+?)\s+(form\s*\d+)\s+(.+?)\s*$"
-    match = re.match(pattern, command, re.IGNORECASE)
-
-    if not match:
-        return None
-
-    subject = match.group(1).strip()
-    form = match.group(2).strip().replace(" ", "")
-    topic = match.group(3).strip()
-
-    return subject, form, topic
+from NOVA_core import NOVA
 
 
-def _parse_practice(command):
-    """
-    Parse:
-        practice mathematics form 1 numbers
-    """
+class CommandRouter:
 
-    pattern = r"^\s*practice\s+(.+?)\s+(form\s*\d+)\s+(.+?)\s*$"
-    match = re.match(pattern, command, re.IGNORECASE)
+    def route(self, command):
 
-    if not match:
-        return None
+        command = command.lower().strip()
 
-    subject = match.group(1).strip()
-    form = match.group(2).strip().replace(" ", "")
-    topic = match.group(3).strip()
+        # ----------------------------
+        # IMAGE
+        # ----------------------------
+        if command.startswith("generate image"):
 
-    return subject, form, topic
+            prompt = command.replace(
+                "generate image",
+                "",
+                1
+            ).strip()
 
+            return NOVA.generate_image(prompt)
 
-def route(command):
-    if not command:
-        return "Please tell me what you need."
+        # ----------------------------
+        # VIDEO
+        # ----------------------------
+        if command.startswith("generate video"):
 
-    command = command.strip()
+            prompt = command.replace(
+                "generate video",
+                "",
+                1
+            ).strip()
 
-    lower = command.lower()
+            return NOVA.generate_video(prompt)
 
-    # ---------------------------------------------------------
-    # TEACH
-    # ---------------------------------------------------------
+        # ----------------------------
+        # GAME
+        # ----------------------------
+        if command.startswith("create game"):
 
-    parsed = _parse_teach(command)
+            name = command.replace(
+                "create game",
+                "",
+                1
+            ).strip()
 
-    if parsed:
-        subject, form, topic = parsed
+            return NOVA.create_game(name)
 
-        lesson = teach(
-            subject,
-            form,
-            topic
-        )
+        # ----------------------------
+        # WEBSITE
+        # ----------------------------
+        if command.startswith("create website"):
 
-        if lesson and not lesson.startswith("Lesson not found:"):
-            try:
-                learning.mark_lesson_started(
-                    subject,
-                    form,
-                    topic
-                )
-            except Exception:
-                pass
+            name = command.replace(
+                "create website",
+                "",
+                1
+            ).strip()
 
-        return lesson
+            return NOVA.create_website(name)
 
-    # ---------------------------------------------------------
-    # PRACTICE
-    # ---------------------------------------------------------
+        # ----------------------------
+        # CHATBOT
+        # ----------------------------
+        if command.startswith("create chatbot"):
 
-    parsed = _parse_practice(command)
+            name = command.replace(
+                "create chatbot",
+                "",
+                1
+            ).strip()
 
-    if parsed:
-        subject, form, topic = parsed
+            return NOVA.create_chatbot(name)
 
-        try:
-            result = learning.practice(
-                subject,
-                form,
-                topic
-            )
+        # ----------------------------
+        # API
+        # ----------------------------
+        if command.startswith("create api"):
 
-            if result:
-                return str(result)
+            name = command.replace(
+                "create api",
+                "",
+                1
+            ).strip()
 
-        except TypeError:
-            pass
+            return NOVA.create_api(name)
 
-        except Exception as error:
-            return f"Practice error: {error}"
+        # ----------------------------
+        # CODE
+        # ----------------------------
+        if command.startswith("generate code"):
 
-        lesson = learning.get_lesson(
-            subject,
-            form,
-            topic
-        )
+            prompt = command.replace(
+                "generate code",
+                "",
+                1
+            ).strip()
 
-        if not lesson:
-            return (
-                f"Lesson not found: "
-                f"{subject} {form} {topic}"
-            )
+            return NOVA.generate_code(prompt)
 
-        practice = learning.extract_practice(
-            lesson
-        )
-
-        if practice:
-            return practice
-
-        return "No practice questions are available for this lesson yet."
-
-    # ---------------------------------------------------------
-    # PROGRESS
-    # ---------------------------------------------------------
-
-    if lower in (
-        "progress",
-        "my progress",
-        "learning progress",
-        "show progress",
-    ):
-        try:
-            return str(learning.progress_report())
-        except Exception as error:
-            return f"Could not read progress: {error}"
-
-    # ---------------------------------------------------------
-    # SUBJECTS
-    # ---------------------------------------------------------
-
-    if lower in (
-        "subjects",
-        "list subjects",
-        "available subjects",
-    ):
-        try:
-            subjects = learning.available_subjects()
-
-            if not subjects:
-                return "No subjects are currently available."
-
-            return (
-                "Available subjects:\n\n"
-                + "\n".join(
-                    f"• {subject.title()}"
-                    for subject in subjects
-                )
-            )
-
-        except Exception as error:
-            return f"Could not load subjects: {error}"
-
-    # ---------------------------------------------------------
-    # FALL BACK TO NOVA BRAIN
-    # ---------------------------------------------------------
-
-    try:
-        return brain_respond(command)
-
-    except Exception as error:
-        return f"NOVA error: {error}"
+        return "Sorry Boss, I don't understand that command."
 
 
-def execute(command):
-    return route(command)
-
-
-if __name__ == "__main__":
-
-    print("NOVA COMMAND ROUTER")
-    print("===================")
-
-    while True:
-
-        try:
-            command = input("\nYou: ").strip()
-
-        except (EOFError, KeyboardInterrupt):
-            print("\nNOVA: Goodbye!")
-            break
-
-        if command.lower() in (
-            "exit",
-            "quit",
-            "goodbye",
-        ):
-            print("NOVA: Goodbye!")
-            break
-
-        print("NOVA:", route(command))
+router = CommandRouter()

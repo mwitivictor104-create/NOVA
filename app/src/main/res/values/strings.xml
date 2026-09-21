@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NOVA</string>
+    <string name="send">Send</string>
+    <string name="close">Close</string>
+    <string name="hint_message">Ask NOVA...</string>
+</resources>

@@ -1,26 +1,44 @@
-"""
-NOVA Configuration
-"""
+# ==========================================
+# NOVA CONFIGURATION
+# ==========================================
 
-APP_NAME = "NOVA AI ASSISTANT"
-VERSION = "1.0"
+import os
 
-# Assistant identity
-ASSISTANT_NAME = "NOVA"
+# API keys are loaded from environment variables.
+# NEVER put real API keys directly in this file.
+TWELVEDATA_API_KEY = os.getenv("TWELVEDATA_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-# User-facing name
-USER_NAME = "Boss Victor"
+ASSETS = {
+    "gold": "XAUUSD",
+    "xauusd": "XAUUSD",
+    "silver": "XAGUSD",
+    "xagusd": "XAGUSD",
+    "eurusd": "EURUSD",
+    "gbpusd": "GBPUSD",
+    "audusd": "AUDUSD",
+    "nzdusd": "NZDUSD",
+    "usdjpy": "USDJPY",
+    "usdchf": "USDCHF",
+    "usdcad": "USDCAD",
 
-# General settings
-DEFAULT_MODE = "text"
+    "bitcoin": "BTCUSD",
+    "btc": "BTCUSD",
+    "ethereum": "ETHUSD",
+    "eth": "ETHUSD",
 
-# Learning
-LESSONS_DIR = "lessons"
+    "apple": "AAPL",
+    "tesla": "TSLA",
+    "nvidia": "NVDA"
+}
 
-# Trading
-TRADING_ENABLED = True
-TRADING_MODE = "SIMULATION"
+DEFAULT_TIMEFRAME = "15min"
+DEFAULT_RISK_PERCENT = 1.0
+DEFAULT_LOT_SIZE = 0.01
 
-# API server
-API_HOST = "127.0.0.1"
-API_PORT = 8080
+NOVA_NAME = "NOVA"
+OWNER_NAME = "Boss Victor"
+
+VOICE_ENABLED = True
+AUTO_ANALYZE = True
+AUTO_SAVE_TRADES = True

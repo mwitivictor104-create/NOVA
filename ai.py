@@ -1,118 +1,50 @@
-import os
-import json
-import urllib.request
-import urllib.error
+# ==========================================================
+# NOVA AI INTERFACE
+# Connects main.py to NOVA's existing brain
+# ==========================================================
+
+try:
+    from brain import ask as brain_ask
+except Exception as e:
+    brain_ask = None
+    brain_error = str(e)
 
 
-API_URL = os.environ.get(
-    "NOVA_AI_URL",
-    ""
-)
+class NovaAI:
 
-API_KEY = os.environ.get(
-    "OPENAI_API_KEY",
-    ""
-)
+    def __init__(self):
+        self.name = "NOVA"
+        self.owner = "Boss Victor"
 
-MODEL = os.environ.get(
-    "NOVA_AI_MODEL",
-    "gpt-5.6"
-)
+    def respond(self, command):
 
+        command = command.strip()
 
-def ai_available():
-    return bool(API_URL and API_KEY)
+        if not command:
+            return ""
 
+        lower = command.lower()
 
-def ask_ai(prompt):
-    if not ai_available():
-        return None
+        # Basic identity commands
+        if lower in ["hello", "hi", "hey", "hello nova", "hi nova"]:
+            return "Hello Boss Victor. How can I help you?"
 
-    payload = {
-        "model": MODEL,
-        "input": prompt,
-    }
+        if "who are you" in lower or "what is your name" in lower:
+            return "I am NOVA, your AI assistant."
 
-    data = json.dumps(payload).encode("utf-8")
+        if "who is my owner" in lower or "who owns you" in lower:
+            return "My owner is Boss Victor."
 
-    request = urllib.request.Request(
-        API_URL,
-        data=data,
-        headers={
-            "Content-Type": "application/json",
-            "Authorization": f"Bearer {API_KEY}",
-        },
-        method="POST",
-    )
+        # Existing NOVA brain
+        if brain_ask:
 
-    try:
-        with urllib.request.urlopen(
-            request,
-            timeout=30,
-        ) as response:
+            try:
+                result = brain_ask(command)
 
-            raw = response.read().decode("utf-8")
-            result = json.loads(raw)
+                if result is not None:
+                    return str(result)
 
-            return extract_response(result)
+            except Exception as e:
+                return f"NOVA brain error: {e}"
 
-    except (
-        urllib.error.URLError,
-        urllib.error.HTTPError,
-        TimeoutError,
-        json.JSONDecodeError,
-        Exception,
-    ):
-        return None
-
-
-def extract_response(data):
-    if not isinstance(data, dict):
-        return None
-
-    # Common Responses API structure
-    output_text = data.get("output_text")
-
-    if output_text:
-        return output_text.strip()
-
-    # Try output blocks
-    output = data.get("output")
-
-    if isinstance(output, list):
-        texts = []
-
-        for item in output:
-            if not isinstance(item, dict):
-                continue
-
-            content = item.get("content", [])
-
-            if not isinstance(content, list):
-                continue
-
-            for block in content:
-                if not isinstance(block, dict):
-                    continue
-
-                text = block.get("text")
-
-                if text:
-                    texts.append(str(text))
-
-        if texts:
-            return "\n".join(texts).strip()
-
-    # Compatibility with older chat-style APIs
-    choices = data.get("choices")
-
-    if isinstance(choices, list) and choices:
-        message = choices[0].get("message", {})
-
-        if isinstance(message, dict):
-            content = message.get("content")
-
-            if content:
-                return str(content).strip()
-
-    return None
+        return "NOVA brain is currently unavailable."

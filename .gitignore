@@ -1,0 +1,102 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+*.token
+*.key
+*.pem
+secrets.json
+
+# Android/Gradle
+.gradle/
+build/
+app/build/
+
+# Generated projects
+GeneratedProjects/
+generated_projects/
+
+# Temporary files
+*.tmp
+*.log
+
+# Termux/editor backups
+*~
+*.swp
+
+# NOVA private/runtime data
+data/profile.json
+data/contacts.json
+data/users.json
+data/journal.json
+data/voice_profiles.json
+data/devices.json
+data/logs.json
+data/cache.json
+data/backups.json
+data/trading_history.json
+
+# Local/private configuration
+config/
+cybersecurity/config.json
+
+# Backups and editor copies
+*_backup.py
+*.backup
+*.save
+*.before_*
+*before_*
+backup_*/
+ai_NOVA_backup/
+merged_from_NOVA/
+
+# Generated images
+generated_images/
+
+# Android/Gradle generated files
+.gradle/
+gradle/
+build/
+app/build/
+
+# Random temporary files
+wake_
+gane
+-d
+-t
+"earch jdk"
+contacts.json
+
+# Firebase/local Android configuration
+app/google-services.json
+
+# Backup/source recovery files
+*.bak
+*.backup
+*.backup_*
+*.corrupted_backup
+*.v2
+*_backup.py
+*_old.py
+*newdesign_backup
+*visual-backup
+
+# All backup/recovery variants
+*backup*
+*.bak*
+*.backup*
+*_old.*
+*.failed_import_backup
+*.corrupted_backup
+*.v2
+
+# Private NOVA runtime data
+data/*.json
