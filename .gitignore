@@ -100,3 +100,6 @@ app/google-services.json
 
 # Private NOVA runtime data
 data/*.json
+
+__pycache__/
+*.pyc
