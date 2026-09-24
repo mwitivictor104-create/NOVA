@@ -1,0 +1,11 @@
+# Nmap 7.99 scan initiated Tue Sep 22 20:36:25 2026 as: /data/data/com.termux/files/usr/bin/nmap -sV -p 22,80,443 -oN /data/data/com.termux/files/home/NOVA/data/nmap_localhost.txt 127.0.0.1
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.0016s latency).
+
+PORT    STATE  SERVICE VERSION
+22/tcp  closed ssh
+80/tcp  closed http
+443/tcp closed https
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Sep 22 20:36:27 2026 -- 1 IP address (1 host up) scanned in 1.60 seconds
