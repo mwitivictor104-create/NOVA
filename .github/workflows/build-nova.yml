@@ -1,0 +1,58 @@
+name: Build NOVA APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout NOVA
+        uses: actions/checkout@v7
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v4
+        with:
+          packages: 'platforms;android-35 build-tools;35.0.0'
+
+      - name: Make Gradle executable
+        run: chmod +x ./gradlew
+
+      - name: Build NOVA APK
+        run: ./gradlew assembleDebug --no-daemon --stacktrace
+
+      - name: Rename APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk NOVA.apk
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NOVA-APK
+          path: NOVA.apk
+
+      - name: Create GitHub release
+        if: success()
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: NOVA v1.0.0
+          body: |
+            NOVA Android application.
+            
+            Download NOVA.apk from the Assets section below.
+          files: NOVA.apk
+          make_latest: true
