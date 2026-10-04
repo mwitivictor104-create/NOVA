@@ -35,24 +35,28 @@ jobs:
       - name: Build NOVA APK
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
-      - name: Rename APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk NOVA.apk
+      - name: Prepare NOVA APK
+        run: |
+          mkdir -p release
+          cp app/build/outputs/apk/debug/app-debug.apk release/NOVA.apk
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: NOVA-APK
-          path: NOVA.apk
+          path: release/NOVA.apk
+          retention-days: 30
 
-      - name: Create GitHub release
-        if: success()
+      - name: Create NOVA release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.0
-          name: NOVA v1.0.0
+          tag_name: nova-latest
+          name: NOVA Latest
           body: |
-            NOVA Android application.
-            
-            Download NOVA.apk from the Assets section below.
-          files: NOVA.apk
+            Latest NOVA Android APK.
+
+            Download NOVA.apk from the Assets section.
+          files: release/NOVA.apk
+          prerelease: false
           make_latest: true
+          fail_on_unmatched_files: true
